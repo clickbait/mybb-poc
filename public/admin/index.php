@@ -3,8 +3,8 @@
  * MyBB 1.8
  * Copyright 2014 MyBB Group, All Rights Reserved
  *
- * Website: http://www.mybb.com
- * License: http://www.mybb.com/about/license
+ * Website: http://www./mybb.com
+ * License: http://www./mybb.com/about/license
  *
  */
 
@@ -15,7 +15,7 @@ define("IN_ADMINCP", 1);
 define("ADMIN_IP_SEGMENTS", 0);
 define("ADMIN_IPV6_SEGMENTS", 0);
 
-require_once dirname(dirname(__FILE__))."/inc/init.php";
+require_once "../../includes/mybb/inc/init.php";
 
 $shutdown_queries = $shutdown_functions = array();
 
@@ -33,10 +33,10 @@ define('MYBB_ADMIN_DIR', MYBB_ROOT.$config['admin_dir'].'/');
 
 define('COPY_YEAR', my_date('Y', TIME_NOW));
 
-require_once MYBB_ADMIN_DIR."inc/class_page.php";
-require_once MYBB_ADMIN_DIR."inc/class_form.php";
-require_once MYBB_ADMIN_DIR."inc/class_table.php";
-require_once MYBB_ADMIN_DIR."inc/functions.php";
+require_once "./inc/class_page.php";
+require_once "./inc/class_form.php";
+require_once "./inc/class_table.php";
+require_once "./inc/functions.php";
 require_once MYBB_ROOT."inc/functions_user.php";
 
 // Set cookie path to our admin dir temporarily, i.e. so that it affects the ACP only
@@ -77,7 +77,7 @@ unset($user);
 // Load Admin CP style
 if(!isset($cp_style))
 {
-	if(!empty($mybb->settings['cpstyle']) && file_exists(MYBB_ADMIN_DIR."/styles/".$mybb->settings['cpstyle']."/main.css"))
+	if(!empty($mybb->settings['cpstyle']) && file_exists("./styles/".$mybb->settings['cpstyle']."/main.css"))
 	{
 		$cp_style = $mybb->settings['cpstyle'];
 	}
@@ -545,7 +545,7 @@ if(!empty($mybb->user['uid']))
 		$lang->load("messages", true);
 	}
 
-	if(!empty($admin_options['cpstyle']) && file_exists(MYBB_ADMIN_DIR."/styles/{$admin_options['cpstyle']}/main.css"))
+	if(!empty($admin_options['cpstyle']) && file_exists("./styles/{$admin_options['cpstyle']}/main.css"))
 	{
 		$cp_style = $admin_options['cpstyle'];
 	}
@@ -561,9 +561,9 @@ if(!empty($mybb->user['uid']))
 }
 
 // Include the layout generation class overrides for this style
-if(file_exists(MYBB_ADMIN_DIR."/styles/{$cp_style}/style.php"))
+if(file_exists("./styles/{$cp_style}/style.php"))
 {
-	require_once MYBB_ADMIN_DIR."/styles/{$cp_style}/style.php";
+	require_once "./styles/{$cp_style}/style.php";
 }
 
 // Check if any of the layout generation classes we can override exist in the style file
@@ -707,7 +707,7 @@ if(!empty($admin_options['authsecret']) && $admin_session['authenticated'] != 1)
 $page->add_breadcrumb_item($lang->home, "index.php");
 
 // Begin dealing with the modules
-$modules_dir = MYBB_ADMIN_DIR."modules";
+$modules_dir = "./modules";
 $dir = opendir($modules_dir);
 while(($module = readdir($dir)) !== false)
 {
