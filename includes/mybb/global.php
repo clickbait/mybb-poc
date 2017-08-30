@@ -8,8 +8,8 @@
  *
  */
 
-error_reporting(0);
-ini_set('display_errors', 0);
+// error_reporting(0);
+// ini_set('display_errors', 0);
 
 $working_dir = dirname(__FILE__);
 if(!$working_dir)

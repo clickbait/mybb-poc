@@ -8,6 +8,8 @@
  *
  */
 
+global $db, $lang, $cache, $theme, $templates, $plugins, $mybb, $debug, $templatecache, $templatelist, $maintimer, $globaltime, $parsetime;
+
 // Disallow direct access to this file for security reasons
 if(!defined("IN_MYBB"))
 {
