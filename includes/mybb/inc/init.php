@@ -8,7 +8,7 @@
  *
  */
 
-global $db, $lang, $cache, $theme, $templates, $plugins, $mybb, $debug, $templatecache, $templatelist, $maintimer, $globaltime, $parsetime;
+global $bgcolor, $cache, $collapsed, $db, $debug, $fcache, $forumpermissions, $forum_viewers, $globaltime, $lang, $maintimer, $moderatorcache, $mybb, $parser, $parsetime, $plugins, $showdepth, $templatecache, $templatelist, $templates, $theme;
 
 // Disallow direct access to this file for security reasons
 if(!defined("IN_MYBB"))
