@@ -1,6 +1,9 @@
 <?php
 
 $router->get( '/', function() {
-	chdir( '../includes/mybb/' );
-	require_once 'includes/mybb/index.php';
+	get_page( 'index' );
+});
+
+$router->get( '/members', function() {
+	get_page( 'memberlist' );
 });
