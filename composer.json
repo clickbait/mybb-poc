@@ -1,0 +1,17 @@
+{
+    "name": "neko/ohbb",
+    "description": "mybb fork",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Neko",
+            "email": "senpai@protonmail.ch"
+        }
+    ],
+    "config": {
+        "vendor-dir": "includes/vendor"
+    },
+    "require": {
+        "bramus/router": "~1.0"
+    }
+}
